@@ -15,7 +15,6 @@ const Header = () =>{
             } else if(window.scrollY < 60) {
                 header.classList.remove('down')
             }
-            console.log(window.scrollY)
         })
         
     }   

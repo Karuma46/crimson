@@ -3,7 +3,7 @@
     z-index: 999;
     width: 100%;
     padding: 50px 0px;
-    transition: width .1    s;
+    transition: width .1s;
     #navBars{
         display: none;
     }
@@ -13,6 +13,24 @@
         img{
             width:100%;
         }
+    }
+    &::before{
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 33.33%;
+        background-color: $blue;
+        bottom: 0px;
+        left: 0px;
+    }
+    &::after{
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 33.33%;
+        background-color: $green;
+        bottom: 0px;
+        right: 0px;
     }
 }
 
