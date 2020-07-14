@@ -4,7 +4,7 @@
     width: 100%;
     padding: 50px 0px;
     transition: width .1s;
-    #navBars{
+    #navBars, #navMenu{
         display: none;
     }
     #logo{
@@ -14,6 +14,19 @@
             width:100%;
         }
     }
+    #navMenu{
+        span{
+            display: inline-block;
+            margin: 10px 20px;
+            a{
+                font-family: 'Josefin Sans', sans-serif;
+                color: $blue;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+    }
+
     &::before{
         position: absolute;
         display: block;
@@ -47,8 +60,41 @@
         width: 120px;
         margin: 0;
     }
-    #navBars{
-        display: block;
+}
+
+@media only screen and (max-width : 768px) {
+    #header.down{
+        #navBars{
+            display: block;
+        }
     }
-    
+}
+
+@media only screen and (min-width : 769px) {
+    #header.down{
+        #navMenu{
+            display: block;
+        }
+    }
+}
+
+@media only screen and (min-width : 1020px) {
+    #header{
+        #logo{
+            width:300px;
+        }
+    }
+}
+@media only screen and (min-width : 1920px) {
+    #header.down{
+        height: 90px;
+        padding: 20px 10%;
+        #navMenu{
+            display: block;
+            margin: 20px 20px;
+        }
+        #logo{
+            width: 180px;
+        }
+    }
 }

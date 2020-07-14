@@ -24,17 +24,6 @@
             }
         }
 
-        #logo{
-            // background-color: red;
-            width: 200px;
-            margin: 0px auto;
-            position: relative;
-            z-index: 2;
-            img{
-                width: 100%;
-            }
-        }
-
         #banner{
             padding:0 10%;
             position: relative;
@@ -179,16 +168,61 @@ span.imgWrap{
         }
     }
 
-    .categories:nth-child(3){
+    .categories#houseCat{
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    #footer{
+        width: 90%;
+        margin: 20px auto;
+        padding: 0;
     }
 }
 
 @media only screen and (min-width : 1020px) {
+    
+    #banner{
+        text-align: center;
+        h1{
+            font-size: 78px;
+        }
+    }
+
     #bgImg{
         img{
             width: 100%;
         }
     }
+
+    .categories{
+        height: 100vh;
+        .catText{
+            margin: auto auto;
+            h1{
+                font-size: 78px;
+            }
+        }
+    }
 }
+
+
+@media only screen and (min-width : 1920px) {
+    .categories{
+        height: 100vh;
+        .catText{
+            margin: auto auto;
+            h1{
+                font-size: 89px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+        span.imgWrap{
+            width: 500px;
+            height: 500px;
+        }
+    }
+
+}   

@@ -57,7 +57,7 @@ const Categories = () => {
                 </Col>
             </Row>
 
-            <Row className="categories">
+            <Row className="categories" id="houseCat">
                 <Col xs={12} md={6}>
                     <div className="catText" id="houseText">
                         <h1>HOUSE?</h1>

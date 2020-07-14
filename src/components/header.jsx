@@ -34,6 +34,16 @@ const Header = () =>{
                     <div id="navBars">
                         <FontAwesomeIcon icon={faBars} />
                     </div>
+
+                    <div id="navMenu">
+                        <span>
+                            <a href="">BROWSE</a>
+                        </span>
+
+                        <span>
+                            <a href="">ABOUT US</a>
+                        </span>
+                    </div>
                 </Col>
             </Row>
         </>
