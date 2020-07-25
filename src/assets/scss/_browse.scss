@@ -1,0 +1,53 @@
+#listings{
+    max-width: 1400px;
+    margin: 0px auto ; 
+    position: relative;
+    top: 150px;
+}
+
+.listing{
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    padding: 20px 0px;
+    .listingImg{
+        width: 100%; height: 200px;
+        background-color: pink;
+        img{
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    h3.listingTitle{
+        color: $blue;
+        margin: 20px 0px;
+    }
+    ul.listingFeatures{
+        padding-left: 20px;
+        // list-style-type:none;
+        line-height: 24px;
+        font-size: 13px;
+        font-weight: 500;
+        @extend .source;
+    }
+    p.listingPrice{
+        color: $green;
+        font-size: 18px;
+        text-align: right;
+    }
+}
+
+#sortDiv{
+    padding: 20px 0px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    #sortBtns{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        span{
+            margin: 0px 20px;
+            cursor: pointer;
+        }
+    }
+}

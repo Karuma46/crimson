@@ -1,0 +1,68 @@
+#float{
+    width: 60px;
+    height: 60px;
+    background-color: $blue;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: -100px;
+    z-index: 999999;
+    transition: all ease-in-out .2s;
+    cursor: pointer;
+    #dots{
+        display: block;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:After{
+        position: absolute;
+        display: block;
+        background-color: $blue;
+        top:0px; left: 0px;
+        height: 100%; width: 100%;
+        border-radius: 50%;
+    }
+}
+
+#floaters{
+    position: fixed;
+    height: 40px;
+    bottom: 60px;
+    width: 40px;
+    right: -100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    transition: all ease-in-out .2s;
+    overflow: hidden;
+    z-index: 99999;
+    span{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        background-color: $green;
+        position: relative;
+        cursor: pointer;
+        right: 0px;
+        svg{
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    
+
+    span.floater1{
+        transition: all ease-in-out .3s;
+    }
+    span.floater2{
+        transition: all ease-in-out .2s;
+    }
+    span.floater3{
+        transition: all ease-in-out .1s;
+    }
+}

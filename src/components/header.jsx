@@ -37,7 +37,7 @@ const Header = () =>{
 
                     <div id="navMenu">
                         <span>
-                            <a href="">BROWSE</a>
+                            <a href="/browse">BROWSE</a>
                         </span>
 
                         <span>

@@ -1,8 +1,9 @@
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPhone, faArrowRight, faArrowLeft, faArrowDown, faPaperPlane} from '@fortawesome/free-solid-svg-icons'
+import {faArrowRight, faArrowLeft, faArrowDown, faPaperPlane, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import bg from 'assets/images/land.jpg'
+import FloatBtn from 'components/floatBtn'
 
 const Landing = () => {
     return(
@@ -22,9 +23,14 @@ const Landing = () => {
                     </div>
                     
                     <div id="ctaBtn">
-                        <button className="btnWrap">
-                           <h4>GIVE US A CALL <br/> <span>+254 728 753 983</span> </h4>
-                            <FontAwesomeIcon icon={faPhone} size="2x" />
+                        <button className="btnWrapLg">
+                            <h4>  Write to us! <FontAwesomeIcon icon={faEnvelope} /><br/> 
+                            <span>info@crimson.com </span> </h4>
+                        </button>
+
+                        <button className="btnWrapSm">
+                            <h4>Give us a call! <FontAwesomeIcon icon={faPhone} /><br/> 
+                            <span>+254 712 345 678</span> </h4>
                         </button>
                     </div>
 
@@ -138,7 +144,8 @@ const Footer = () => {
 
 const Home = () => {
     return(
-        <>
+        <>  
+            <FloatBtn/>
             <Landing />
             <Categories />
             <Form />
