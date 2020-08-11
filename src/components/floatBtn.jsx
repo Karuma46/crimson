@@ -1,8 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faEllipsisV, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisV, faPhone, faEnvelope, faTimes } from '@fortawesome/free-solid-svg-icons'
+import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
 const FloatBtn = () =>{
+
+    const [active, setActive] = useState(false)
 
     const showBtn = () => {
         let btn = document.getElementById('float')
@@ -25,10 +28,24 @@ const FloatBtn = () =>{
         if(floaters.style.height === '160px'){
             floaters.style.height = '40px'
             floaters.style.bottom = '60px'
+            setActive(false)
         } else {
             floaters.style.height = "160px"
             floaters.style.bottom = '130px'
+            setActive(true)
         }
+    }
+
+    const linkToMail = () =>{
+        window.location.href = 'mailto:info@crimsontraders.com'
+    }
+
+    const linkToPhone = () =>{
+        window.location.href = 'tel:1234567890'
+    }
+
+    const linkToWhatsapp = () =>{
+        window.location.href = 'https://wa.me/2547123456789'
     }
 
     useEffect(() => {
@@ -41,20 +58,26 @@ const FloatBtn = () =>{
         <>
             <div id="float" onClick={() => showFloaters()}>
                 <span id="dots">
-                    <FontAwesomeIcon icon={faEllipsisV} color="white" />
+                    {
+                        active ? (
+                            <FontAwesomeIcon icon={faTimes} color="white" />
+                        ) : (
+                            <FontAwesomeIcon icon={faEllipsisV} color="white" />
+                        )
+                    }
                 </span>
             </div>
 
             <div id="floaters">
-                <span className="floaterSpans" id="floater1">
+                <span className="floaterSpans" id="floater1" onClick={linkToPhone}>
                     <FontAwesomeIcon icon={faPhone} color="white" />
                 </span>
 
-                <span className="floaterSpans" id="floater2">
-                    <FontAwesomeIcon icon={['fab', 'whatsapp']} color="white" />
+                <span className="floaterSpans" id="floater2" onClick={linkToWhatsapp}>
+                    <FontAwesomeIcon icon={faWhatsapp} color="white" />
                 </span>
 
-                <span className="floaterSpans" id="floater3">
+                <span className="floaterSpans" id="floater3" onClick={linkToMail}>
                     <FontAwesomeIcon icon={faEnvelope} color="white" />
                 </span>
             </div>

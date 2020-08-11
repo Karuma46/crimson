@@ -4,6 +4,7 @@
 @import './header';
 @import './float';
 @import './browse';
+@import './inputs';
 
 body{
     margin: 0;
@@ -13,3 +14,12 @@ h1,h2,h3,p{
 margin: 0;
 }
 
+#spinnerWrap{
+    width: 100%;
+    padding: 200px 0px;
+    text-align: center;
+    p{
+        margin: 50px 0px;
+        
+    }
+}

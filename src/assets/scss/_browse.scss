@@ -2,7 +2,7 @@
     max-width: 1400px;
     margin: 0px auto ; 
     position: relative;
-    top: 150px;
+    top: 250px;
 }
 
 .listing{
@@ -16,7 +16,6 @@
             width: 100%;
         }
     }
-
     h3.listingTitle{
         color: $blue;
         margin: 20px 0px;
@@ -31,7 +30,12 @@
     }
     p.listingPrice{
         color: $green;
-        font-size: 18px;
+        font-size: 22px;
+        text-align: right;
+    }
+    p.editBtn{
+        color: $blue;
+        cursor: pointer;
         text-align: right;
     }
 }
@@ -44,10 +48,17 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-
         span{
             margin: 0px 20px;
             cursor: pointer;
         }
     }
+}
+
+#filterForm{
+    width: 100%;
+    margin-bottom: 100px;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    padding: 20px 20px;
+
 }

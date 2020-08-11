@@ -1,0 +1,104 @@
+.inputWrap{
+    margin: 50px 0px !important;
+}
+
+.labels{
+    width: 100%;
+    display: block;
+    margin: 10px 0px;
+    @extend .josefin;
+    color: $blue;
+    font-weight: bold;
+}
+
+select{
+    width: 100%;
+    height: 30px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    @extend .source;
+    option{
+        height: 50px;
+    }
+}
+
+.slider{
+    width: 100%; height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    outline: none;
+    &::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        border: 1px solid $blue;
+        height: 20px; width: 20px;
+        border-radius: 50%;
+        background-color: $blue;
+        cursor: pointer;
+        &::after{
+            content: "g";
+        }
+    }
+}
+
+.rangeOutput{
+    @extend .source;
+    
+}
+
+
+.checkBoxScroll{
+    margin: 0px 0px !important;
+    height: 200px;
+    overflow: auto;
+    .checkBoxDiv{
+        margin: 10px 0px;
+        span{
+            @extend .source ;
+            font-size: 13px;
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            left: 5px;
+        }
+    }
+}
+
+.button{
+    padding: 10px 15px;
+    background-color: $blue;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.textInput{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    height: 30px;
+    outline: none;
+}
+
+.textarea{
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.imgWrapUp{
+    width: 100% !important;
+    height: 150px;
+    overflow: hidden;
+    img{
+        width: 100px;
+        height: 100px;
+    }
+}

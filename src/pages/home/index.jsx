@@ -1,11 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowRight, faArrowLeft, faArrowDown, faPaperPlane, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import bg from 'assets/images/land.jpg'
 import FloatBtn from 'components/floatBtn'
+import Header from 'components/header'
+import Apartment from 'assets/images/apartment.png'
+import Land from 'assets/images/land.png'
+import House from 'assets/images/house.png'
+
 
 const Landing = () => {
+
+    const linkToMail = () =>{
+        window.location.href = 'mailto:info@crimsontraders.com'
+    }
+
+    const linkToPhone = () =>{
+        window.location.href = 'tel:1234567890'
+    }
+
+    const linkToWhatsapp = () =>{
+        window.location.href = 'https://wa.me/2547123456789'
+    }
+
     return(
         <>
             <Row id="landing">
@@ -23,12 +41,12 @@ const Landing = () => {
                     </div>
                     
                     <div id="ctaBtn">
-                        <button className="btnWrapLg">
+                        <button className="btnWrapLg" onClick={linkToMail}>
                             <h4>  Write to us! <FontAwesomeIcon icon={faEnvelope} /><br/> 
-                            <span>info@crimson.com </span> </h4>
+                            <span>info@crimsontraders.com </span> </h4>
                         </button>
 
-                        <button className="btnWrapSm">
+                        <button className="btnWrapSm" onClick={linkToPhone}>
                             <h4>Give us a call! <FontAwesomeIcon icon={faPhone} /><br/> 
                             <span>+254 712 345 678</span> </h4>
                         </button>
@@ -50,6 +68,10 @@ const Categories = () => {
                 <Col xs={12} md={6}>
                     <div className="catText">
                         <h1>LAND?</h1>
+                        <p>
+                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
+                        </p>
+
                         <p>We Got It! <FontAwesomeIcon icon={faArrowRight} /> </p>
                     </div>
 
@@ -57,7 +79,7 @@ const Categories = () => {
                 <Col xs={12} md={6}>
                     <div className="catImg">
                         <span className="imgWrap">
-                            <p></p>
+                            <img src={Land} alt=""/>
                         </span>
                     </div>
                 </Col>
@@ -67,6 +89,9 @@ const Categories = () => {
                 <Col xs={12} md={6}>
                     <div className="catText" id="houseText">
                         <h1>HOUSE?</h1>
+                        <p>
+                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
+                        </p>
                         <p> <FontAwesomeIcon icon={faArrowLeft} /> Come See One!</p>
                     </div>
 
@@ -74,7 +99,7 @@ const Categories = () => {
                 <Col xs={12} md={6}>
                     <div className="catImg">
                         <span className="imgWrap">
-                            <p></p>
+                            <img src={House} alt=""/>
                         </span>
                     </div>
                 </Col>
@@ -84,6 +109,9 @@ const Categories = () => {
                 <Col xs={12}>
                     <div className="catText" id="apartText">
                         <h1>APARTMENT?</h1>
+                        <p>
+                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
+                        </p>
                         <p>Location! Location! Location!</p>
                         <FontAwesomeIcon icon={faArrowDown} />
                     </div>
@@ -92,7 +120,7 @@ const Categories = () => {
                 <Col xs={12}>
                     <div className="catImg">
                         <span className="imgWrap">
-                            <p></p>
+                            <img src={Apartment} alt=""/>
                         </span>
                     </div>
                 </Col>
@@ -102,6 +130,11 @@ const Categories = () => {
 }
 
 const Form = () => {
+
+    const submitSubForm = (e) =>{
+        e.preventDefault()
+    }
+
     return(
         <>
             <Row id="form">
@@ -109,10 +142,10 @@ const Form = () => {
                     <h2>SUBSCRIBE FOR UPDATES</h2>
                     <p>Get regular email updates on new listings and great offers as they become available.</p>
 
-                    <form>
+                    <form onSubmit={submitSubForm}>
                         <input type="email" placeholder="Email Address" />
-                        <button type="submit">
-                            <FontAwesomeIcon icon={faPaperPlane} />
+                        <button type="submit" id="subBtn">
+                            <FontAwesomeIcon icon={faPaperPlane} color="#002D4F" />
                         </button>
                     </form>
                 </Col>
@@ -143,8 +176,18 @@ const Footer = () => {
 }
 
 const Home = () => {
+
+    const setTitle = () => {
+        document.title = 'HomePage | Crimsont Traders.'
+    }
+
+    useEffect(() => {
+        setTitle()
+    },[])
+
     return(
         <>  
+            <Header />
             <FloatBtn/>
             <Landing />
             <Categories />
