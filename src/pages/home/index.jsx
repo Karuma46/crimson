@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faArrowRight, faArrowLeft, faArrowDown, faPaperPlane, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faArrowRight, faArrowLeft, faPaperPlane, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import bg from 'assets/images/land.jpg'
 import FloatBtn from 'components/floatBtn'
 import Header from 'components/header'
@@ -18,10 +18,6 @@ const Landing = () => {
 
     const linkToPhone = () =>{
         window.location.href = 'tel:1234567890'
-    }
-
-    const linkToWhatsapp = () =>{
-        window.location.href = 'https://wa.me/2547123456789'
     }
 
     return(
@@ -72,7 +68,7 @@ const Categories = () => {
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
                         </p>
 
-                        <p>We Got It! <FontAwesomeIcon icon={faArrowRight} /> </p>
+                        <p>We Got It!  <FontAwesomeIcon icon={faArrowRight} /> </p>
                     </div>
 
                 </Col>
@@ -93,6 +89,7 @@ const Categories = () => {
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
                         </p>
                         <p> <FontAwesomeIcon icon={faArrowLeft} /> Come See One!</p>
+                        
                     </div>
 
                 </Col>
@@ -106,18 +103,17 @@ const Categories = () => {
             </Row>
 
             <Row className="categories">
-                <Col xs={12}>
+                <Col xs={12} md={6}>
                     <div className="catText" id="apartText">
                         <h1>APARTMENT?</h1>
                         <p>
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
                         </p>
-                        <p>Location! Location! Location!</p>
-                        <FontAwesomeIcon icon={faArrowDown} />
+                        <p>Location! Location! Location! <FontAwesomeIcon icon={faArrowRight} /> </p>
                     </div>
 
                 </Col>
-                <Col xs={12}>
+                <Col xs={12} md={6}>
                     <div className="catImg">
                         <span className="imgWrap">
                             <img src={Apartment} alt=""/>

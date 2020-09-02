@@ -2,18 +2,18 @@ import axios from 'axios'
 
 class Call{
 
-    baseUrl = 'https://api.crimsontraders.com/'
+    baseUrl = 'http://api.crimsontraders.com/'
     
     constructor(endpoint){
         this.endpoint = `${this.baseUrl}${endpoint}`
     }
     
     getHeaders = () => {
-        var tokens = localStorage.getItem('tokens')
+        var tokens = localStorage.getItem('user')
         if (tokens){
             tokens = JSON.parse(tokens)
             var headers = {
-                Authorization : `Bearer ${tokens.access}`,
+                Authorization : `${tokens.access}`,
             }
         } else {
             headers = {}
@@ -25,7 +25,7 @@ class Call{
         return await axios({
             method: 'get',
             url: this.endpoint+`${params ? params : ''}`,
-            headers: this.getHeaders()
+            // headers: this.getHeaders()
         })
     }
 

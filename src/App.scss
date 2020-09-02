@@ -1,5 +1,9 @@
 @import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
 @import './assets/scss/main.scss';
+@import './pages/dash/auth/styles.scss';
+@import './pages/dash/home/styles.scss';
+@import './pages/dash/components/styles.scss';
+
 
 .container-fluid{
     padding: 0px;
@@ -7,4 +11,9 @@
 }
 .row{
     margin:0px ;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }

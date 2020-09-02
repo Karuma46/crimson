@@ -19,7 +19,6 @@ const FloatBtn = () =>{
                 btn.style.right = '-100px'  
                 btns.style.right = '-100px'  
             }
-            // console.log(window.scrollY, window.innerHeight)
         })
     }
 

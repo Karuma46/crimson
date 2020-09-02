@@ -74,6 +74,7 @@ select{
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    // display: block;
 }
 
 .textInput{
@@ -101,4 +102,30 @@ select{
         width: 100px;
         height: 100px;
     }
+}
+
+#formStatus{
+    width: 50%;
+    padding: 10px 0px;
+    font-size: 13px !important;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+    @extend .source;
+    span#close{
+        content: '\f00d';
+        position: absolute;
+        top: 50%; transform: translateY(-50%);
+        right: 20px;
+        cursor: pointer;
+    }
+}
+.okStatus{
+    background-color: #90ee90;
+}
+
+.errStatus{
+    background-color: #ffa2b0;
 }

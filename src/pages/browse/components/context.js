@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect} from 'react'
+import React, {createContext, useState, useEffect} from 'react'
 import Api from 'config/api'
 
 
@@ -27,6 +27,17 @@ export const ListingsProvider = (props) =>{
             {props.children}
         </ListingsContext.Provider>
     )
+}
+
+export const getRange = (list) => {
+    const priceArr = []
+    // list.forEach(element => {
+    for(var i=0; i<list.length; i++){
+        if(typeof(list[i].price) === 'number'){
+            priceArr.push(list[i].price)
+        }
+    }
+    priceArr.sort()
 }
 
 

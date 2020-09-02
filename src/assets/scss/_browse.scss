@@ -1,8 +1,11 @@
 #listings{
     max-width: 1400px;
-    margin: 0px auto ; 
+    margin: 50px auto; 
     position: relative;
-    top: 250px;
+    top: 50px;
+}
+#listings.browse{
+    top: 180px;
 }
 
 .listing{
@@ -18,7 +21,14 @@
     }
     h3.listingTitle{
         color: $blue;
-        margin: 20px 0px;
+        margin: 10px 0px;
+        font-size: 18px;
+    }
+    p.description{
+        font-size: 16px;
+    }
+    span.listingDetails{
+        color: rgba(0,0,0,0.7);
     }
     ul.listingFeatures{
         padding-left: 20px;
@@ -58,7 +68,14 @@
 #filterForm{
     width: 100%;
     margin-bottom: 100px;
-    border-right: 1px solid rgba(0,0,0,0.2);
+    // border-right: 1px solid rgba(0,0,0,0.2);
     padding: 20px 20px;
+}
 
+.sideBar-listings-left{
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.sideBar-listings-right{
+    border-left: 1px solid rgba(0,0,0,0.2);
 }

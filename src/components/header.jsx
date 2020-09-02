@@ -78,7 +78,7 @@ export const Header2 = () =>{
                         </span>
 
                         <span>
-                            <a href="">ABOUT US</a>
+                            <a href="/about-us">ABOUT US</a>
                         </span>
                     </div>
                 </Col>

@@ -1,5 +1,7 @@
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export const Input = (props) =>{
     return(
@@ -7,7 +9,8 @@ export const Input = (props) =>{
             <Row className="inputWrap">
                 <Col xs="12">
                     <label className="labels"> {props.label}:</label>
-                    <input type="text" className="textInput" value={props.value} onChange={props.onchange} name={props.name} placeholder={props.ph} />
+                    {/* <input type={props.type} className="textInput" value={props.value} onChange={props.onchange} name={props.name} placeholder={props.ph} /> */}
+                    <input className="textInput" {...props}/>
                 </Col>
             </Row>
         </>
@@ -21,8 +24,8 @@ export const Text = (props) =>{
             <Row className="inputWrap">
                 <Col xs="12">
                     <label className="labels">{props.label}:</label>
-                   <textarea className="textarea" onChange={props.onchange} value={props.value}  name={props.name} placeholder={props.ph}>
-                   </textarea>
+                    <textarea className="textarea" {...props}>
+                    </textarea>
                 </Col>
             </Row>
         </>
@@ -37,7 +40,7 @@ const Select = (props) =>{
             <Row className="inputWrap">
                 <Col xs="12">
                     <label className="labels"> {props.label} </label>
-                    <select onChange={props.onchange} name={props.name}>
+                    <select onChange={props.onChange} name={props.name}>
                         {props.options ? (
                             props.options.map(option => (
                                 <option value={option.name} key={option.name}>{option.name}</option>
@@ -58,7 +61,7 @@ export const Range = (props) =>{
             <Row className="inputWrap">
                 <Col>
                     <label className="labels"> {props.label} </label>
-                    <input type="range" className="slider" name="price" min="1" max="100" value={props.value} onChange={props.onchange} name={props.name} />
+                    <input type="range" className="slider" min={props.min} max={props.max} value={props.value} onChange={props.onchange} name={props.name} />
                     <div className="rangeOutput">
                         <span className="minRange"> 0 - 100</span>
                     </div>
@@ -112,7 +115,25 @@ export const Images = (props) =>{
 
 export const Button = (props) =>{
     return(
-        <button className="button">{props.title}</button>
+        <button className="button" {...props}>{props.title}</button>
+    )
+}
+
+export const FormStatus = (props) =>{
+
+    const hideME = () =>{
+        document.getElementById('formStatus').style.display = 'none';
+    }
+
+    return(
+        <div id="formStatus" className={props.class}>
+            <span>
+                {props.message}
+            </span>
+            <span id="close" onClick={hideME}>
+                <FontAwesomeIcon icon={faTimes} />
+            </span>
+        </div>
     )
 }
 

@@ -8,13 +8,22 @@
 h1, h2, h3{
     @extend .josefin;
     font-weight: 700;
-    margin: 15px;
+    // margin: 10px 0px;
 }
 
 p{
     @extend .source;
     font-weight: 400;
-    margin: 10px;
+    margin: 10px 0px;
+}
+
+span{
+    font-size: 14px;
+    @extend .source;
+}
+
+p,a,li{
+    font-size: 16px;
 }
 
 

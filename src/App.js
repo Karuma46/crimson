@@ -6,7 +6,7 @@ import './App.scss';
 
 import Home from 'pages/home'
 import Browse from 'pages/browse'
-import Dash from 'dash'
+import Dash from 'pages/dash'
 
 function App() {
   return (

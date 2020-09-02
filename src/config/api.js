@@ -1,4 +1,4 @@
-import Call, {Img} from './axios'
+import Call from './axios'
 
 const Api = () => {
   
@@ -9,13 +9,13 @@ const Api = () => {
   return (
     {
       server_url: setUrl(),
-      login: setUrl('auth/token/'),
-      register: setUrl('auth/register/'),
+      login: setUrl('auth/login'),
+      register: setUrl('auth/register'),
       listings: setUrl('listings'),
-      land: setUrl('listings/land'),
-      house: setUrl('listings/house'),
-      apartment: setUrl('listings/apartment'),
-      subscribers: setUrl('subscribers/'),
+      land: setUrl('land'),
+      house: setUrl('house'),
+      apartment: setUrl('apartment'),
+      subscribers: setUrl('subscribers'),
     }
   )
 }
