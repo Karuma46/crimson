@@ -1,0 +1,43 @@
+#sidebar{
+    background-color: $blue;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+    width: 320px;
+    left: -320px;
+    transition: .5s all cubic-bezier(.25,.1,.25,1);
+
+    .closeCol{
+        height: 100px;
+        overflow: auto;
+        #closeBar{
+            position: relative;
+            margin: 35px 0 0 30px;
+        }
+    }
+    .menuCol{
+        height: calc(100vh - 100px);
+        #sideMenu{
+            padding: 0px 15px;
+            display: none;
+            span{
+                display: block;
+                @extend .josefin;
+                color: white;
+                padding: 15px 0px;
+                border-bottom: 1px solid white;
+                margin: 20px 0px;
+                a{
+                    font-size: 14px;
+                    transition: .1s margin ease-in-out;
+                }
+                &:hover{
+                    a{
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

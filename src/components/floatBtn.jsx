@@ -12,10 +12,10 @@ const FloatBtn = () =>{
         let btns = document.getElementById('floaters')
 
         document.addEventListener('scroll', () => {
-            if(window.scrollY > 450 ){
+            if(window.scrollY > 60){
                 btn.style.right = '20px'
                 btns.style.right = '30px'
-            } else if(window.scrollY < 450) {
+            } else if(window.scrollY < 60) {
                 btn.style.right = '-100px'  
                 btns.style.right = '-100px'  
             }

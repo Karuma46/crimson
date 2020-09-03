@@ -8,6 +8,7 @@ import Header from 'components/header'
 import Apartment from 'assets/images/apartment.png'
 import Land from 'assets/images/land.png'
 import House from 'assets/images/house.png'
+import Sidebar from 'components/sidebar'
 
 
 const Landing = () => {
@@ -189,6 +190,7 @@ const Home = () => {
             <Categories />
             <Form />
             <Footer />
+            <Sidebar />
         </>
     )
 }

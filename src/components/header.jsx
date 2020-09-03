@@ -6,6 +6,11 @@ import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 const Header = () =>{
 
+    const showSideBar = () => {
+        document.getElementById('sidebar').style.left = '0px'; 
+        document.getElementById('sideMenu').style.display = 'block'; 
+    }
+
     const getScrollPosition = () => {
         let header = document.getElementById('header')
 
@@ -26,7 +31,12 @@ const Header = () =>{
     return(
         <>  
             <Row id="header">
-                <Col xs={12}>
+                <Col xs={12} id="header-wrap">
+
+                    <div id="navBars" onClick={showSideBar}>
+                        <FontAwesomeIcon icon={faBars} color="#002D4F" size="lg" />
+                    </div>
+
                     <div id="logo">
                         <a href="/">
                             <img src={Logo} alt="Crimson Traders Logo"/>
