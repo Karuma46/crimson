@@ -9,7 +9,8 @@ import Apartment from 'assets/images/apartment.png'
 import Land from 'assets/images/land.png'
 import House from 'assets/images/house.png'
 import Sidebar from 'components/sidebar'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Landing = () => {
 
@@ -63,7 +64,7 @@ const Categories = () => {
         <>
             <Row className="categories">
                 <Col xs={12} md={6}>
-                    <div className="catText">
+                    <div className="catText" data-aos="fade-up" data-aos-delay="50" data-aos-duration="600">
                         <h1>LAND?</h1>
                         <p>
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
@@ -74,7 +75,7 @@ const Categories = () => {
 
                 </Col>
                 <Col xs={12} md={6}>
-                    <div className="catImg">
+                    <div className="catImg" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
                         <span className="imgWrap">
                             <img src={Land} alt=""/>
                         </span>
@@ -84,7 +85,7 @@ const Categories = () => {
 
             <Row className="categories" id="houseCat">
                 <Col xs={12} md={6}>
-                    <div className="catText" id="houseText">
+                    <div className="catText" data-aos="fade-up" data-aos-delay="50" data-aos-duration="600" id="houseText">
                         <h1>HOUSE?</h1>
                         <p>
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
@@ -95,7 +96,7 @@ const Categories = () => {
 
                 </Col>
                 <Col xs={12} md={6}>
-                    <div className="catImg">
+                    <div className="catImg" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
                         <span className="imgWrap">
                             <img src={House} alt=""/>
                         </span>
@@ -105,7 +106,7 @@ const Categories = () => {
 
             <Row className="categories">
                 <Col xs={12} md={6}>
-                    <div className="catText" id="apartText">
+                    <div className="catText" data-aos="fade-up" data-aos-delay="50" data-aos-duration="600" id="apartText">
                         <h1>APARTMENT?</h1>
                         <p>
                             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
@@ -115,7 +116,7 @@ const Categories = () => {
 
                 </Col>
                 <Col xs={12} md={6}>
-                    <div className="catImg">
+                    <div className="catImg" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
                         <span className="imgWrap">
                             <img src={Apartment} alt=""/>
                         </span>
@@ -180,6 +181,7 @@ const Home = () => {
 
     useEffect(() => {
         setTitle()
+        AOS.init();
     },[])
 
     return(
@@ -196,3 +198,4 @@ const Home = () => {
 }
 
 export default Home
+

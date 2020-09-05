@@ -12,7 +12,7 @@ const Sidebar = () => {
 
     return(
         <>
-            <Row id="sidebar" className="animate__animated">
+            <Row id="sidebar">
                 <Col xs="12" className="closeCol">
                     <div id="closeBar" onClick={hideBar}>
                         <FontAwesomeIcon icon={faTimes} color="white" size="lg" />
@@ -20,7 +20,7 @@ const Sidebar = () => {
                 </Col>
 
                 <Col xs="12" className="menuCol">
-                    <div id="sideMenu" className="animate__animated">
+                    <div id="sideMenu">
                         <span>
                             <a href="/">HOME</a>
                         </span>
