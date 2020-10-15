@@ -24,7 +24,7 @@
     }
     #navMenu{
         span{
-            display: inline-block;
+            display: none;
             margin: 10px 20px;
             a{
                 font-family: 'Josefin Sans', sans-serif;
@@ -48,7 +48,7 @@
     }
     #logo{
         width: 150px;
-        margin: 0px auto;
+        margin: 0px auto 0px 80px;
         transition: ease-in-out all .2s;
     }
     &:before{
@@ -71,15 +71,23 @@
         bottom: 0px;
         right: 0px;
     }
-    #navBars{
-        display: block;
+    #navMenu{
+        span{
+            display: inline-block;
+        }
     }
 }
 
 @media only screen and (max-width : 768px) {
     #header.down{
+        #logo{
+            margin:0px auto;
+        }
         #navBars{
             display: block;
+        }
+        #navMenu{
+            display: none;
         }
     }
 }

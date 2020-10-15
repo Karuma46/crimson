@@ -4,7 +4,7 @@ import {Row, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 
-const Header = () =>{
+const Header = ({classs}) =>{
 
     const showSideBar = () => {
         document.getElementById('sidebar').style.left = '0px'; 
@@ -30,7 +30,7 @@ const Header = () =>{
 
     return(
         <>  
-            <Row id="header">
+            <Row id="header" className={classs ? `${classs}` : ''}>
                 <Col xs={12} id="header-wrap">
 
                     <div id="navBars" onClick={showSideBar}>
@@ -43,23 +43,19 @@ const Header = () =>{
                         </a>
                     </div>
 
-                    {/* <div id="navBars">
-                        <FontAwesomeIcon icon={faBars} />
-                    </div> */}
-
-                    {/* <div id="navMenu">
+                    <div id="navMenu">
                         <span>
                             <a href="/browse">BROWSE</a>
                         </span>
 
                         <span>
-                            <a href="">ABOUT US</a>
+                            <a href="/">ABOUT US</a>
                         </span>
 
                         <span>
-                            <a href="">CONTACT US</a>
+                            <a href="/">CONTACT US</a>
                         </span>
-                    </div> */}
+                    </div>
                 </Col>
             </Row>
         </>

@@ -52,7 +52,7 @@ const Browse = () => {
     return(
         <>
             <ListingsProvider>
-                <Header />
+                <Header classs="down"/>
                 <Listings />
                 <FloatBtn />
             </ListingsProvider>
