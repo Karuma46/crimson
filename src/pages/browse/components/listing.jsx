@@ -1,30 +1,26 @@
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import numeral from 'numeral'
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-// import { faMapMarker } from '@fortawesome/free-solid-svg-icons'
-
+import {ListingImg} from 'dash/listings/components/list'
 
 const Listing = ({obj}) => {
-
     return(
         <>
             <Row className="listing" key={obj.category+obj.id}>
                 <Col xs="12" md="5">
-                    <div className="listingImg">
-                        <img src="" alt=""/>
-                    </div>
+                    <ListingImg imgs={obj.images} />
                 </Col>
                 <Col xs="12" md="7">
                     <h3 className="listingTitle">{obj.title}</h3>
                     <span className="listingDetails">
                         {/* <FontAwesomeIcon icon={faMapMarker} />  */}
-                        {obj.county} | {obj.category}
+                        {/* {obj.county} | */}
+                         {obj.category}
                     </span>
                     <p class="description">
-                        {obj.desc}
+                        {obj.description}
                     </p>
-                    <ul className="listingFeatures">
+                    {/* <ul className="listingFeatures">
                         {
                             obj.features ? (
                                 obj.features.split('|').map(item =>(
@@ -34,8 +30,8 @@ const Listing = ({obj}) => {
                                 ''
                             )
                         }
-                    </ul>
-                    <p className="listingPrice">Ksh {numeral(obj.price).format('0.0 a')} </p>
+                    </ul> */}
+                    <p className="listingPrice">Ksh {numeral(obj.price).format('0a')} </p>
                 </Col>
             </Row>
         </>

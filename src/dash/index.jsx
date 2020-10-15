@@ -7,15 +7,15 @@ import Header from './components/header'
 import {UserProvider} from './auth/context'
 
 const Dash = () => {
+
     return(
         <>  
             <Header/>
-
             <UserProvider>
                 <Router>
                     <Switch>
                         <Route exact path="/dash" component={Home} />
-                        <Route exact path="/dash/auth" component={Auth} />
+                        <Route exact path="/dash/login" component={Auth} />
                         <Route path="/dash/listings" component={Listings} />
                     </Switch>
                 </Router>

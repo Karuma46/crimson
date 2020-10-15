@@ -11,10 +11,8 @@ const Api = () => {
       server_url: setUrl(),
       login: setUrl('auth/login'),
       register: setUrl('auth/register'),
-      listings: setUrl('listings'),
-      land: setUrl('land'),
-      house: setUrl('house'),
-      apartment: setUrl('apartment'),
+      listings: setUrl('api/listings'),
+      images: setUrl('api/images'),
       subscribers: setUrl('subscribers'),
     }
   )

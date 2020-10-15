@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class Call{
 
-    baseUrl = 'http://api.crimsontraders.com/'
+    baseUrl = 'http://localhost:8000/'
     
     constructor(endpoint){
         this.endpoint = `${this.baseUrl}${endpoint}`
@@ -41,11 +41,11 @@ class Call{
     put = async (id, params) =>{    
         return await axios({
             method: 'put',
-            url: this.endpoint+'/'+id,
+            url: this.endpoint+''+id,
             data: params,
             headers: this.getHeaders()
         })
-    }
+    }   
 
     delete = async (params) =>{
         return await axios({
@@ -53,16 +53,6 @@ class Call{
             url: this.endpoint+`${params ? params : ''}`,
             headers: this.getHeaders()
         })
-    }
-}
-
-export class Img extends Call {
-
-    baseUrl = 'https://media.motiontalentafrica.co.ke/'
-
-    constructor(endpoint){
-        super(endpoint)
-        this.endpoint = `${this.baseUrl}${endpoint}`
     }
 }
 

@@ -32,6 +32,18 @@ export const Text = (props) =>{
     )
 }
 
+export const Number = (props) =>{
+    return(
+        <>
+            <Row>
+                <Col>
+                    <label className="labels">{props.label}:</label>
+                    <input type="number" className="textInput" min="0" step="1000" {...props}/>
+                </Col>
+            </Row>
+        </>
+    )
+}
 
 
 const Select = (props) =>{
@@ -43,7 +55,7 @@ const Select = (props) =>{
                     <select onChange={props.onChange} name={props.name}>
                         {props.options ? (
                             props.options.map(option => (
-                                <option value={option.name} key={option.name}>{option.name}</option>
+                                <option value={option.name} key={option.name} selected={true ? props.value == option.name: false} >{option.name}</option>
                             ))
                         ) : (
                             ''
@@ -136,5 +148,22 @@ export const FormStatus = (props) =>{
         </div>
     )
 }
+
+export const formFxn = (btn, text) => {
+    return {
+
+        hangForm : () => {
+            btn.disabled = 'disabled';
+            btn.style.cursor = 'wait';
+            btn.innerText = text;
+        },
+        freeForm : () => {
+            btn.disabled = '';
+            btn.style.cursor = 'pointer';
+            btn.innerText = text;
+        }
+    }
+}
+
 
 export default Select

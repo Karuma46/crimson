@@ -52,8 +52,6 @@ const Auth = () =>{
 
     useEffect(() => {
         document.title = "Login | Crimsont Traders"
-
-
     },[])
 
     return(

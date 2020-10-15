@@ -1,11 +1,52 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faPen } from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'react-router-dom'
 import {faSortAlphaUp, faSortNumericUp, faSortAmountUpAlt} from '@fortawesome/free-solid-svg-icons'
 import Spinner from 'components/spinner'
 import numeral from 'numeral'
+import api from 'config/api'
+import _ from 'underscore'
+
+
+export const ListingImg = ({imgs}) => {
+
+    const [slide, setSlide] = useState(0);
+
+    const slideNext = () =>{
+        slide+1 < imgs.length-1 ? setSlide(slide + 1) : setSlide(0)
+    }
+
+    const slideBack = () => {
+        slide-1 > 0 ? setSlide(slide - 1) : setSlide(imgs.length-1)
+    }
+
+    return(
+        <>
+            <div className="listingImg">
+                <div className="sliderWrap">
+
+                    <span className="prevSlide" onClick={slideBack}>
+                        <FontAwesomeIcon icon={faAngleLeft} />
+                    </span>
+                    
+                    <span className="nextSlide" onClick={slideNext}>
+                        <FontAwesomeIcon icon={faAngleRight} />
+                    </span>
+                    
+                        {
+                            imgs.length > 0 ? (
+                                <div className="imgslide">
+                                    <img src={`http://localhost:8000/storage/${imgs[slide].url}`} alt="" />
+                                </div>
+                            ) : ('')
+                        }
+                </div>
+            </div>
+        </>
+    )
+}
 
 const Listing = ({obj}) => {
     
@@ -16,20 +57,18 @@ const Listing = ({obj}) => {
         <>
             <Row className="listing">
                 <Col xs="12" md="6">
-                    <div className="listingImg">
-                        <img src="" alt=""/>
-                    </div>
+                    <ListingImg imgs={obj.images} />
                 </Col>
                 <Col xs="12" md="6">
                 <h3 className="listingTitle">{obj.title}</h3>
                     <span className="listingDetails">
                         {/* <FontAwesomeIcon icon={faMapMarker} /> */}
-                        {obj.county} | {obj.category}
+                        {obj.category}
                     </span>
                     <p className="description">
-                        {obj.desc}
+                        {obj.description}
                     </p>
-                    <ul className="listingFeatures">
+                    {/* <ul className="listingFeatures">
                         {
                             obj.features ? (
                                 obj.features.split('|').map(item =>(
@@ -39,10 +78,10 @@ const Listing = ({obj}) => {
                                 ''
                             )
                         }
-                    </ul>
-                    <p className="listingPrice">KSH {numeral(obj.price).format('0 a')} </p>
+                    </ul> */}
+                    <p className="listingPrice">KSH {numeral(obj.price).format('0a')} </p>
                     <p className="editBtn">
-                        <Link to={{pathname:"listings/edit", state:obj}}>
+                        <Link to={{pathname:`listings/edit/${obj.id}`, state:obj}}>
                             <FontAwesomeIcon icon={faPen} size="xs" />
                         </Link>
                     </p>

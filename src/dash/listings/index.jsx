@@ -5,11 +5,12 @@ import FilterForm from 'pages/browse/components/filterForm'
 import List from './components/list'
 import Edit from './components/editListing'
 import Api from 'config/api'
+import ImageForm from './components/images'
 
 const Listings = () =>{
 
     const [list, setList] = useState([])
-    
+        
     const getListings = () =>{
         Api.listings.get()
         .then(res=>{
@@ -37,9 +38,9 @@ const Listings = () =>{
                         </Col>
                     </>
                 )}/>
-                <Route exact path="/dash/listings/edit" render={(props) => (
+                
+                <Route exact path="/dash/listings/edit/:id" render={(props) => (
                     <>
-                        
                         <Col xs="8">
                             <>
                                 <h3>Edit Listing</h3>
@@ -47,7 +48,7 @@ const Listings = () =>{
                             </>  
                         </Col>
                         <Col xs="4" className="sideBar-listings-right">
-                            <h3>Image Upload</h3>
+                            <ImageForm props={props} />
                         </Col>
                     </>
                 )} />
@@ -59,10 +60,6 @@ const Listings = () =>{
                                 <h3>Edit Listing</h3>
                                 <Edit props={props}/>
                             </>  
-                        </Col>
-
-                        <Col xs="4" className="sideBar-listings-right">
-                            <h3>Image Upload</h3>
                         </Col>
                     </>
                 )} />
