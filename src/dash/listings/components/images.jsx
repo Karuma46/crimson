@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faFileUpload, faCheck, faTimes, faTrash, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import {faFileUpload, faCheck, faTimes, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 import Api from 'config/api'
 
 const ImageForm = ({props}) => {

@@ -6,8 +6,6 @@ import {Link} from 'react-router-dom'
 import {faSortAlphaUp, faSortNumericUp, faSortAmountUpAlt} from '@fortawesome/free-solid-svg-icons'
 import Spinner from 'components/spinner'
 import numeral from 'numeral'
-import api from 'config/api'
-import _ from 'underscore'
 
 
 export const ListingImg = ({imgs}) => {

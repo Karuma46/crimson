@@ -55,7 +55,7 @@ const Select = (props) =>{
                     <select onChange={props.onChange} name={props.name}>
                         {props.options ? (
                             props.options.map(option => (
-                                <option value={option.name} key={option.name} selected={true ? props.value == option.name: false} >{option.name}</option>
+                                <option value={option.name} key={option.name} selected={true ? props.value === option.name: false} >{option.name}</option>
                             ))
                         ) : (
                             ''

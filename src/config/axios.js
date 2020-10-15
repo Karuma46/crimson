@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class Call{
 
-    baseUrl = 'http://localhost:8000/'
+    baseUrl = process.env.REACT_APP_API_URL
     
     constructor(endpoint){
         this.endpoint = `${this.baseUrl}${endpoint}`
